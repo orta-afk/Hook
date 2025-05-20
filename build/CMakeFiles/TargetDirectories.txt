@@ -1,0 +1,3 @@
+/home/kaido/Projects/Hook/build/CMakeFiles/Hook.dir
+/home/kaido/Projects/Hook/build/CMakeFiles/edit_cache.dir
+/home/kaido/Projects/Hook/build/CMakeFiles/rebuild_cache.dir
