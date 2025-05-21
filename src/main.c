@@ -1,14 +1,25 @@
 #include "raylib.h"
-#include "game.h"
+#include "entity.h"
 
 int main(){
-  game game = {
-    .width = 640,
-    .height = 320,
-    .title = "title",
-    .color = BLACK};
+  InitWindow(640, 320, "HOOK");  
 
-  initGame(&game);
-  updateGame(&game);
-  destoryGame(&game);
+  entity entity;
+  entityTexture entityTexture;
+
+  initEntity(&entity);
+  initEntityTexture(&entityTexture);
+  
+  while(!WindowShouldClose()){   
+
+    updateEntity(&entity, &entityTexture);
+    
+    BeginDrawing();
+    ClearBackground(BLACK);  
+    drawEntity(&entityTexture);
+    EndDrawing();
+  }
+  CloseWindow();
+  destroyEntity(&entityTexture);
 }
+
