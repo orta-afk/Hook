@@ -15,10 +15,11 @@ int main(){
   
   SetTargetFPS(60);
 
+  stuffGen(&tilemap);
   while(!WindowShouldClose()){   
     float dt  = GetFrameTime();
-    updateTilemap(&tilemap);
     updateEntity(&entity, &entityTexture, dt);
+    updateTilemap(&tilemap);
     
     BeginDrawing();
     ClearBackground(BLACK);  

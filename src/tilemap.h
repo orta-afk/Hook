@@ -1,7 +1,10 @@
 #ifndef TILEMAP_H
 #define TILEMAP_H
 
+#include <time.h>
+#include <stdlib.h>
 #include "raylib.h"
+
 #define SIZE 16
 #define WIDTH 40
 #define HEIGHT 20
@@ -18,19 +21,32 @@ typedef enum tiles{
   bottomLeftTile,
   bottomRightTile,
   bottomtile,
+  
+  grass1,
+  grass2,
+  grass3,
+  grass4,
+  grass5,
+  grass6,
+
+  tree1,
+  tree2,
 }tiles;
 
 typedef struct tilemap{
   int indexX;
   int indexY;
+  int number;
   tiles tile;
   Texture2D texture;
+  Texture2D otherTexture;
   Rectangle source;
   Rectangle dest;
 }tilemap;
 
 void initTilemap(tilemap* tilemap);
 void updateTilemap(tilemap* tilemap);
+void stuffGen(tilemap *tilemap);
 void drawTilemap(tilemap* tilemap);
 void destroyTilemap(tilemap* tilemap);
 
