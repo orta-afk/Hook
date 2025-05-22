@@ -6,6 +6,8 @@
 #define WIDTH 40
 #define HEIGHT 20
 
+extern int map[WIDTH][HEIGHT];
+
 typedef enum tiles{
   sky,
   leftTile,

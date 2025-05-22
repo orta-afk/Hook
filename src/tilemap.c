@@ -10,6 +10,7 @@ void initTilemap(tilemap *tilemap){
   tilemap->texture = LoadTexture("../assest/monochrome-transparent_packed.png");
 }
 
+
 void updateTilemap(tilemap *tilemap){
   for(int i = 0; i < WIDTH; i++){
     for(int j = 0; j < HEIGHT; j++){

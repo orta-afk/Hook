@@ -16,9 +16,9 @@ int main(){
   SetTargetFPS(60);
 
   while(!WindowShouldClose()){   
-
+    float dt  = GetFrameTime();
     updateTilemap(&tilemap);
-    updateEntity(&entity, &entityTexture);
+    updateEntity(&entity, &entityTexture, dt);
     
     BeginDrawing();
     ClearBackground(BLACK);  
