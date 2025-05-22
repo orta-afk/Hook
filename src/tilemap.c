@@ -118,27 +118,27 @@ void drawTilemap(tilemap *tilemap) {
         tilemap->indexY = 2;
         break;
       case grass1:
-        tilemap->indexX = 50;
+        tilemap->indexX = 49;
         tilemap->indexY = 0;
         break;
       case grass2:
-        tilemap->indexX = 51;
+        tilemap->indexX = 50;
         tilemap->indexY = 0;
         break;
       case grass3:
-        tilemap->indexX = 52;
+        tilemap->indexX = 51;
         tilemap->indexY = 0;
         break;
       case grass4:
-        tilemap->indexX = 50;
+        tilemap->indexX = 49;
         tilemap->indexY = 1;
         break;
       case grass5:
-        tilemap->indexX = 51;
+        tilemap->indexX = 50;
         tilemap->indexY = 1;
         break;
       case grass6:
-        tilemap->indexX = 52;
+        tilemap->indexX = 51;
         tilemap->indexY = 1;
         break;
       }

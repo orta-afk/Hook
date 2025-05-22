@@ -1,5 +1,4 @@
 #include "entity.h"
-#include "tilemap.h"
 
 void initEntity(entity *entity) {
   entity->positions = (Vector2){100, 50};
