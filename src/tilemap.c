@@ -1,5 +1,4 @@
 #include "tilemap.h"
-#include <raylib.h>
 
 int map[WIDTH][HEIGHT] = {0};
 
@@ -9,7 +8,6 @@ void initTilemap(tilemap *tilemap){
   tilemap->indexY = 0;
   tilemap->texture = LoadTexture("../assest/monochrome-transparent_packed.png");
 }
-
 
 void updateTilemap(tilemap *tilemap){
   for(int i = 0; i < WIDTH; i++){

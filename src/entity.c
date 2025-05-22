@@ -1,10 +1,14 @@
 #include "entity.h"
+#include "tilemap.h"
 
 void initEntity(entity *entity){
   entity->positions = (Vector2){100,50};
   entity->velocity = (Vector2){0,0};
   entity->gravity = 130;
   entity->max_gravity = 150;
+  entity->speed = 60;
+  entity->isCollided = false;
+  entity->dir = 1;
 }
 
 void initEntityTexture(entityTexture *entityTexture){
@@ -26,14 +30,25 @@ void gravity(entity* entity, float dt){
   }
 }
 
+void move(entity* entity, float dt){
+  int tileX = (int)(entity->positions.x) / SIZE;
+  if(entity->isCollided == true){
+    if(tileX <= 5){
+      entity->dir = 1;
+    }else if(tileX >= 35){
+      entity->dir = -1;
+    }
+    entity->velocity.x = entity->dir * entity->speed;
+  }
+}
+
 void updateEntity(entity *entity, entityTexture* entityTexture, float dt){
 
   gravity(entity, dt);
-    
+  move(entity, dt);
   entity->positions.x += entity->velocity.x * dt;
   entity->positions.y += entity->velocity.y * dt;
   
-  entity->bound = entityTexture->dest;
   entityTexture->dest = (Rectangle){
     .x = entity->positions.x,
     .y = entity->positions.y,
@@ -48,6 +63,7 @@ void updateEntity(entity *entity, entityTexture* entityTexture, float dt){
       if (map[tileX][tileY] != sky) {
           entity->positions.y = tileY * SIZE - SIZE;
           entity->velocity.y = 0;
+          entity->isCollided = true;
       }
   }
 }

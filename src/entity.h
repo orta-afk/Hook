@@ -3,12 +3,15 @@
 
 #include "raylib.h"
 #include "tilemap.h"
+
 #define SIZE 16
 
 typedef struct entity{
+  int dir;
+  int speed;
   int gravity;
   int max_gravity;
-  Rectangle bound;
+  bool isCollided;
   Vector2 velocity;
   Vector2 positions;
 }entity;
