@@ -13,6 +13,7 @@ void initTilemap(tilemap *tilemap) {
 void stuffGen(tilemap *tilemap) {
   for (int i = 0; i < WIDTH; i++) {
     for (int j = 0; j < HEIGHT; j++) {
+      int treeSpwanRate = rand() % 3;
       if (j == 14 && i >= 5 && i <= 35) {
         int grassType = rand() % 6;
         switch (grassType) {
@@ -86,36 +87,36 @@ void drawTilemap(tilemap *tilemap) {
         tilemap->indexY = 0;
         break;
       case rightTile:
-        tilemap->indexX = 18;
-        tilemap->indexY = 0;
-        break;
-      case leftTile:
-        tilemap->indexX = 20;
-        tilemap->indexY = 0;
+        tilemap->indexX = 49;
+        tilemap->indexY = 3;
         break;
       case middleTile:
-        tilemap->indexX = 19;
-        tilemap->indexY = 0;
+        tilemap->indexX = 50;
+        tilemap->indexY = 3;
+        break;
+      case leftTile:
+        tilemap->indexX = 51;
+        tilemap->indexY = 3;
         break;
       case middleLeftTile:
-        tilemap->indexX = 18;
-        tilemap->indexY = 1;
+        tilemap->indexX = 49;
+        tilemap->indexY = 4;
         break;
       case middleRightTile:
-        tilemap->indexX = 20;
-        tilemap->indexY = 1;
+        tilemap->indexX = 51;
+        tilemap->indexY = 4;
         break;
       case bottomLeftTile:
-        tilemap->indexX = 18;
-        tilemap->indexY = 2;
+        tilemap->indexX = 49;
+        tilemap->indexY = 5;
         break;
       case bottomtile:
-        tilemap->indexX = 19;
-        tilemap->indexY = 2;
+        tilemap->indexX = 50;
+        tilemap->indexY = 5;
         break;
       case bottomRightTile:
-        tilemap->indexX = 20;
-        tilemap->indexY = 2;
+        tilemap->indexX = 51;
+        tilemap->indexY = 5;
         break;
       case grass1:
         tilemap->indexX = 49;

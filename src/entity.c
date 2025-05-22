@@ -1,7 +1,7 @@
 #include "entity.h"
 
 void initEntity(entity *entity) {
-  entity->positions = (Vector2){100, 50};
+  entity->positions = (Vector2){GetScreenWidth()/2, GetScreenHeight()/2 - 50};
   entity->velocity = (Vector2){0, 0};
   entity->gravity = 130;
   entity->max_gravity = 150;
@@ -11,7 +11,7 @@ void initEntity(entity *entity) {
 }
 
 void initEntityTexture(entityTexture *entityTexture) {
-  entityTexture->indexX = 26;
+  entityTexture->indexX = 25;
   entityTexture->indexY = 0;
   entityTexture->texture = LoadTexture("../assest/monochrome_packed.png");
   entityTexture->source = (Rectangle){

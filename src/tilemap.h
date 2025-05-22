@@ -28,16 +28,22 @@ typedef enum tiles{
   grass4,
   grass5,
   grass6,
+}tiles;
 
+typedef enum iTiles{
   tree1,
   tree2,
-}tiles;
+  rock1,
+  rock2,
+  rock3,
+}iTiles;
 
 typedef struct tilemap{
   int indexX;
   int indexY;
   int number;
   tiles tile;
+  iTiles itiles;
   Texture2D texture;
   Texture2D otherTexture;
   Rectangle source;
