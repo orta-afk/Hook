@@ -22,8 +22,8 @@ int main(){
     
     BeginDrawing();
     ClearBackground(BLACK);  
-    drawEntity(&entityTexture);
     drawTilemap(&tilemap);
+    drawEntity(&entityTexture);
     EndDrawing();
   }
   CloseWindow();
