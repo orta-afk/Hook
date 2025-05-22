@@ -27,7 +27,7 @@ int main(){
     EndDrawing();
   }
   CloseWindow();
-  destroyEntity(&entityTexture);
   destroyTilemap(&tilemap);
+  destroyEntity(&entityTexture);
 }
 

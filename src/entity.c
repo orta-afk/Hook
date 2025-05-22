@@ -1,5 +1,4 @@
 #include "entity.h"
-#include <raylib.h>
 
 void initEntity(entity *entity){
   entity->positions = (Vector2){40,50};

@@ -11,6 +11,11 @@ typedef enum tiles{
   leftTile,
   middleTile,
   rightTile,
+  middleLeftTile,
+  middleRightTile,
+  bottomLeftTile,
+  bottomRightTile,
+  bottomtile,
 }tiles;
 
 typedef struct tilemap{
