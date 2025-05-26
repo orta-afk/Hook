@@ -53,6 +53,15 @@ build CMakeFiles/Hook.dir/src/entity.c.o: C_COMPILER__Hook_unscanned_ /home/kaid
   TARGET_COMPILE_PDB = CMakeFiles/Hook.dir/
   TARGET_PDB = Hook.pdb
 
+build CMakeFiles/Hook.dir/src/game.c.o: C_COMPILER__Hook_unscanned_ /home/kaido/Projects/Hook/src/game.c || cmake_object_order_depends_target_Hook
+  DEP_FILE = CMakeFiles/Hook.dir/src/game.c.o.d
+  FLAGS = -std=gnu99
+  INCLUDES = -I/home/kaido/Projects/Hook/includes
+  OBJECT_DIR = CMakeFiles/Hook.dir
+  OBJECT_FILE_DIR = CMakeFiles/Hook.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/Hook.dir/
+  TARGET_PDB = Hook.pdb
+
 build CMakeFiles/Hook.dir/src/main.c.o: C_COMPILER__Hook_unscanned_ /home/kaido/Projects/Hook/src/main.c || cmake_object_order_depends_target_Hook
   DEP_FILE = CMakeFiles/Hook.dir/src/main.c.o.d
   FLAGS = -std=gnu99
@@ -79,7 +88,7 @@ build CMakeFiles/Hook.dir/src/tilemap.c.o: C_COMPILER__Hook_unscanned_ /home/kai
 #############################################
 # Link the executable Hook
 
-build Hook: C_EXECUTABLE_LINKER__Hook_ CMakeFiles/Hook.dir/src/entity.c.o CMakeFiles/Hook.dir/src/main.c.o CMakeFiles/Hook.dir/src/tilemap.c.o
+build Hook: C_EXECUTABLE_LINKER__Hook_ CMakeFiles/Hook.dir/src/entity.c.o CMakeFiles/Hook.dir/src/game.c.o CMakeFiles/Hook.dir/src/main.c.o CMakeFiles/Hook.dir/src/tilemap.c.o
   DEP_FILE = CMakeFiles/Hook.dir/link.d
   LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/Hook.dir/link.d
   LINK_LIBRARIES = -Wl,-rpath,/home/kaido/Projects/Hook/lib  -lraylib  -lm  -ldl  -lpthread  -lGL  -lX11  -lXrandr  -lXi  -lXxf86vm  -lXcursor

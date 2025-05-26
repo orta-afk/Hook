@@ -1,34 +1,36 @@
-#include "raylib.h"
-#include "entity.h"
-#include "tilemap.h"
+#include "game.h"
 
-int main(){
-  InitWindow(640, 320, "HOOK");  
+int main() {
+  game game;
+  window window;
 
-  entity entity;
-  entityTexture entityTexture;
-  tilemap tilemap;
-
-  initEntity(&entity);
-  initEntityTexture(&entityTexture);
-  initTilemap(&tilemap);
+  initGame(&game, &window);
   
-  SetTargetFPS(60);
+  RenderTexture2D target = LoadRenderTexture(640, 320);
+  SetTextureFilter(target.texture, TEXTURE_FILTER_POINT);
+  SetConfigFlags(FLAG_VSYNC_HINT | FLAG_WINDOW_RESIZABLE);  
 
-  stuffGen(&tilemap);
-  while(!WindowShouldClose()){   
-    float dt  = GetFrameTime();
-    updateEntity(&entity, &entityTexture, dt);
-    updateTilemap(&tilemap);
-    
+  while (!WindowShouldClose()) {
+    float dt = GetFrameTime();
+    updateGame(&game, dt);
+
+    BeginTextureMode(target);
+    ClearBackground(BLACK);
+    drawGame(&game);
+    EndTextureMode();
+
     BeginDrawing();
-    ClearBackground(BLACK);  
-    drawTilemap(&tilemap);
-    drawEntity(&entityTexture);
+    ClearBackground(BLACK);
+
+    DrawTexturePro(target.texture,
+                   (Rectangle){0, 0, (float)target.texture.width,
+                   -(float)target.texture.height},
+                   (Rectangle){0, 0, (float)window.width, (float)window.height},
+                   (Vector2){0, 0}, 0.0f, RAYWHITE);
     EndDrawing();
   }
-  CloseWindow();
-  destroyTilemap(&tilemap);
-  destroyEntity(&entityTexture);
-}
 
+  UnloadRenderTexture(target);
+  destroyGame(&game);
+  return 0;
+}
