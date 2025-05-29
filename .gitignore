@@ -1,1 +1,37 @@
-./build
+build/
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+*.dylib
+
+# Raylib-generated files (just in case)
+*.log
+*.tmp
+
+# Xcode / macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+*.pdb
+
+# VS Code
+.vscode/
+
+# CLion / JetBrains
+.idea/
+
+# Backup / temp files
+*~
+*.swp
+*.bak
+
+# CMake output
+CMakeFiles/
+CMakeCache.txt
+build.ninja
+cmake_install.cmake
