@@ -1,8 +1,7 @@
 #include "entity.h"
 
 void initEntity(entity *entity) {
-  entity->positions =
-      (Vector2){GetScreenWidth() / 2, GetScreenHeight() / 2 - 50};
+  entity->positions = (Vector2){GetScreenWidth() / 2, GetScreenHeight() / 2 - 50};
   entity->velocity = (Vector2){0, 0};
   entity->gravity = 130;
   entity->max_gravity = 150;
